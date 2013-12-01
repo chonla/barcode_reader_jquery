@@ -1,5 +1,5 @@
 /*
- * Barcode detector jQuery plugin customized for TMX
+ * Barcode detector jQuery plugin
  * Author: Chonlasith Jucksriporn
  * Release:
  * June 7, 2013
