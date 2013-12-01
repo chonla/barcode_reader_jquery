@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Test Barcode Reader</title>
+<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="jquery.barcode.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.barcode1').barcode({
+    'debug': false,
+    'onbarcode':function(target, value, segments){
+      $('.barcode1_output').val(value);
+    }
+  });
+    
+  $('.barcode1').focus();
+})
+</script>
+</head>
+<body>
+
+<b>Scan Barcode</b><br>
+<textarea class="barcode1" cols="80" rows="5"></textarea><br>
+<b>Segmented barcode</b><br>
+<textarea class="barcode1_output" cols="80" rows="5"></textarea><br>
+  
+</body>
+</html>
