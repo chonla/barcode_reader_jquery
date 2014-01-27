@@ -9,7 +9,15 @@ $(function(){
     'debug': false,
     'onbarcode':function(target, value, segments){
       $('.barcode1_output').val(value);
+    },
+    'ondata':function(charCode, char){
+      var msg = charCode + "[" + char + "]";
+      if ($('.barcode1_input').val() != "") {
+        msg = "," + msg;  
+      }
+      $('.barcode1_input').val($('.barcode1_input').val() + msg);
     }
+    /*,'data': '56,56,55,48,48,49,55,49,55,53,13'*/
   });
     
   $('.barcode1').focus();
@@ -22,6 +30,7 @@ $(function(){
 <textarea class="barcode1" cols="80" rows="5"></textarea><br>
 <b>Segmented barcode</b><br>
 <textarea class="barcode1_output" cols="80" rows="5"></textarea><br>
-  
+<b>Incoming key stream</b><br>
+<textarea class="barcode1_input" cols="80" rows="5"></textarea><br>
 </body>
 </html>
